@@ -1,0 +1,31 @@
+// A program to output your first 4 digits of your X number and the last 4 digits of your X number 
+// Uses file output instead of console 
+#include<iostream> 
+#include<math.h> 
+#include<fstream> 
+#include <stdlib.h> 
+using namespace std; 
+int main(void) 
+{ 
+int a, b, c; 
+char zzz; 
+const char filepath[] = "C:\\CoutputFiles\\FileProject1.txt"; 
+const char ErrorMessage[] = "Can't open file"; 
+fstream OutStream(filepath, ios::out); 
+if (OutStream.fail()) 
+{ 
+cerr << ErrorMessage << filepath; 
+cin >> zzz; 
+exit(-1); } 
+cout << "please input your St.john university's X number"; 
+cin >> a; 
+b = a / 10000; 
+c = a % 10000; 
+OutStream << "\n Your first 4 digits of your X number is" << b; 
+OutStream << "\n Your last 4 digits of your X number is" << c; 
+cout << "\n Information have been written to your file" << "\n\n"; 
+cout << "Press any keyboard to return"; 
+cin >> zzz; 
+return 0; 
+}
+
